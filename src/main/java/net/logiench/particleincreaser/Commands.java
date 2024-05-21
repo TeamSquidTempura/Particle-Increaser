@@ -15,7 +15,6 @@ public class Commands {
                         ParticleIncreaser.toggle();
                         return 0;
                     }))
-                    .then(CommandManager.literal("amount"))
                     .then(CommandManager.argument("value", IntegerArgumentType.integer()).executes(context -> {
                         PlayerEntity p = MinecraftClient.getInstance().player;
                         ParticleIncreaser.value = IntegerArgumentType.getInteger(context, "value");
