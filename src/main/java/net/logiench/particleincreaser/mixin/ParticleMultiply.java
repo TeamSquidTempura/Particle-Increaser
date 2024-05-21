@@ -1,5 +1,6 @@
 package net.logiench.particleincreaser.mixin;
 
+import net.logiench.particleincreaser.ParticleIncreaser;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.WorldRenderer;
 import net.minecraft.client.world.ClientWorld;
@@ -18,7 +19,7 @@ public class ParticleMultiply {
 
     @Inject(method = "addParticle(Lnet/minecraft/particle/ParticleEffect;DDDDDD)V", at = @At("HEAD"))
     private void addParticle(ParticleEffect parameters, double x, double y, double z, double velocityX, double velocityY, double velocityZ, CallbackInfo ci) {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < ParticleIncreaser.value; i++) {
             worldRenderer.addParticle(parameters, parameters.getType().shouldAlwaysSpawn(), x, y, z, velocityX, velocityY, velocityZ);
         }
         return;
