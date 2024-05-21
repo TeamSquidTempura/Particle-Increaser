@@ -14,8 +14,9 @@ public class ParticleIncreaser implements ModInitializer {
     public void onInitialize() {
         mode = true;
         value = 10;
-        log.info("enabled");
         Commands.register();
+        log.info("enabled");
+
     }
 
     public static void toggle() {
