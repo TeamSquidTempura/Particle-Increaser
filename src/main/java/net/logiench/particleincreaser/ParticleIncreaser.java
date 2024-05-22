@@ -16,13 +16,11 @@ public class ParticleIncreaser implements ModInitializer {
         value = 10;
         Commands.register();
         log.info("enabled");
-
     }
-
     public static void toggle() {
         mode = !mode;
         if (MinecraftClient.getInstance().player != null) {
-            MinecraftClient.getInstance().player.sendMessage(Text.of("toggled the mode to " + mode));
+            MinecraftClient.getInstance().player.sendMessage(Text.of("Toggled the mode to " + mode));
         }
     }
 }
